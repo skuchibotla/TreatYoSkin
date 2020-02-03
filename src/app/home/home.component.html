@@ -1,0 +1,35 @@
+<!-- Bootstrap - CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!-- Slideshow
+		- #carousel interval -> change slide after x amount of seconds, x = never
+		- justify-content-center -> horizontally center items inside container
+		- text-center -> horizontally center text 
+-->
+<div class = "container background">
+	<ngb-carousel class = "mt-4 carousel slide" id = "carouselControl" interval = "None" data-ride = "carousel">
+		<div class = "carousel-inner">
+			<ng-template ngbSlide>
+				<div class = "slide d-flex container justify-content-center align-items-center">
+					<h1 class = "display-3 text-center">Treat.<br>Yo.<br>Skin.</h1>
+				</div>
+			</ng-template>
+			<ng-template ngbSlide>
+				<div class = "slide d-flex container justify-content-center align-items-center">
+					<h1 class = "display-4 text-center">hehehe</h1>
+				</div>
+			</ng-template>
+		</div>
+	</ngb-carousel>
+</div>
+<div class = "mt-3 container">
+	<div class = "row">
+		<div [routerLink] = "['/quiz']" class = "quiz col mr-3 d-flex justify-content-center align-items-center">
+			<p class = "lead text-center">Find out your skin type</p>
+		</div>
+		<div [routerLink] = "['/database']" class = "database col ml-3 d-flex justify-content-center align-items-center">
+			<p class = "lead text-center">Find products perfect for you</p>
+		</div>
+	</div>
+</div>
+

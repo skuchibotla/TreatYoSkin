@@ -1,0 +1,47 @@
+<!-- Bootstrap - CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class = "container text-center" id = "quiz">
+    <h1 class = "display-4">Taking care of your skin starts with learning about it.</h1>
+    <br><button (click) = "showQuiz()" class = "btn btn-secondary">Start</button>
+</div>
+<form *ngIf = "questions">
+	<div (click) = 'getQuestionScore("question1")' class = "question" id = "question1">
+		<h3 class = "display-5">1. How does your skin feel on a daily basis?</h3>
+		<input type = "radio" name = "question1" value = "0"> Tight or flakey <br>
+		<input type = "radio" name = "question1" value = "10"> Shiny on some spots, but fine everywhere else <br>
+		<input type = "radio" name = "question1" value = "20"> Shiny everywhere <br>
+		<input type = "radio" name = "question1" value = "30"> Itchy, red, or inflamed <br>
+		<input type = "radio" name = "question1" value = "40"> Little to no tightness, shininess, or irritation <br><br>
+	</div>
+	<div (click) = 'getQuestionScore("question1")' class = "question" id = "question2">
+		<h3 class = "display-5">2. What type of moisturizer would wreck havoc if used on your face?</h3>
+		<input type = "radio" name = "question2" value = "0"> Water-based moisturizers <br>
+		<input type = "radio" name = "question2" value = "10"> Moisturizers that are too thin or too thick <br>
+		<input type = "radio" name = "question2" value = "20"> Oil-based moisturizers <br>
+		<input type = "radio" name = "question2" value = "30"> Moisturizers with lots of fragrance <br>
+		<input type = "radio" name = "question2" value = "40"> Most would be okay <br><br>
+	</div>
+	<div (click) = 'getQuestionScore("question1")' class = "question" id = "question3">
+		<h3 class = "display-5">3. Which weather condition makes your skin hardest to manage?</h3>
+		<input type = "radio" name = "question3" value = "0"> Strong winds <br>
+		<input type = "radio" name = "question3" value = "10"> Sunny or rainy <br>
+		<input type = "radio" name = "question3" value = "20"> High humidity <br>
+		<input type = "radio" name = "question3" value = "30"> Dusty or polluted air <br>
+		<input type = "radio" name = "question3" value = "40"> None of these weather conditions significantly affect my skin <br><br>		
+	</div>
+	<div (click) = 'getQuestionScore("question1")' class = "question" id = "question4">
+		<h3 class = "display-5">4. What do you find yourself doing often thought the day?</h3>
+		<input type = "radio" name = "question4" value = "0"> Reapplying moisturizer <br>
+		<input type = "radio" name = "question4" value = "10"> Blotting my forehead and nose <br>
+		<input type = "radio" name = "question4" value = "20"> Blotting my entire face <br>
+		<input type = "radio" name = "question4" value = "30"> Using soothing agents for irritation <br>
+		<input type = "radio" name = "question4" value = "40"> Maybe re-applying SPF, but otherwise nothing <br>		
+	</div>
+	<div class = "container text-center">
+		<button (click) = "showSkinType()" type = "button" value = "Submit" class = "btn btn-secondary">Submit</button>
+	</div>
+</form>
+<div *ngIf = "isResult">
+	<h1 class = "display-4">You have {{result}}!</h1>
+</div>
