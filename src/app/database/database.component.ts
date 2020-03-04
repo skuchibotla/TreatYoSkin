@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
+import { ProductsService } from '../products.service';
+import { Products } from '../products';
 
 @Component({
   selector: 'app-database',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatabaseComponent implements OnInit {
 
-  constructor() { }
+  products : Products[];
+  
+  constructor(private p : ProductsService) {
+  }
 
   ngOnInit() {
+  	this.p.getProducts().subscribe((data : Products[]) => {
+  		this.products = data;
+  	});
   }
 
 }
